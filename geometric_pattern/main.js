@@ -29,7 +29,7 @@ function draw(){
         }
         while(x <= width){
             fill(color(rVal, gVal, bVal));
-            stroke(color(0, 0, 0));
+            stroke(color(rVal, gVal, bVal));
             ellipse(x, y, circleDiameter, circleDiameter);
             x = x + circleDiameter;
         }
