@@ -9,10 +9,10 @@ function setup(){
 }
 
 function draw(){
-    var y = 0;
+    var y = height;
     var isShifted = false;
     //Make grid of Circles
-    while(y <= height){
+    while(y >= 0){
         
         var x;
         if (isShifted){
@@ -25,7 +25,7 @@ function draw(){
             x = x + circleDiameter;
         }
         
-        y = y + circleRadius;
+        y = y - circleRadius;
         isShifted = !isShifted;
     }
 }
