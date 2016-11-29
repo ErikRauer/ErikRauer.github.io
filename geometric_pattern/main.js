@@ -1,4 +1,4 @@
-var NUM_CIRCLES = 15;
+var num_circles = 15;
 var circleDiameter;
 var circleRadius;
 var rVal;
@@ -8,7 +8,6 @@ var bVal;
 function setup(){
     createCanvas(480,600);
     frameRate(5);
-    circleDiameter = width/NUM_CIRCLES;
     circleRadius = circleDiameter/2;
     rVal = 255;
     gVal = 0;
@@ -16,6 +15,7 @@ function setup(){
 }
 
 function draw(){
+    circleDiameter = width/num_circles;
     
     var y = height;
     var isShifted = false;
@@ -49,3 +49,9 @@ function draw(){
         // bVal = bVal + 3;
     }
 }
+
+function moreCircles(){
+    num_circles = num_circles + 1;
+}
+
+$("#more").on("click", moreCircles());
