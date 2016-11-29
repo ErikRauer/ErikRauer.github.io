@@ -68,7 +68,7 @@ class ball{
         }
         
         //If ball collides with player, stop game
-        if (this.xPos - 25 <= playerBallX + 25 && this.xPos + 25 >= playerBallX - 25 && this.yPos - 25 <= playerBallY + 25 && this.yPos + 25 >= playerBallY - 25){
+        if (this.xPos - 40 <= playerBallX && this.xPos + 40 >= playerBallX && this.yPos - 40 <= playerBallY  && this.yPos + 40 >= playerBallY){
             fill(0, 0, 0);
             text("Game Over", 50, 50);
             text("Score: " + timer, 50, 70);
@@ -78,7 +78,7 @@ class ball{
 }
 
 function setup(){
-    createCanvas(640, 480);
+    createCanvas(1080, 640);
     ball1 = new ball(100, 100);
     ball2 = new ball(400, 300);
     ball1.initialize();
@@ -90,12 +90,10 @@ function draw(){
     playerBallX = mouseX;
     playerBallY = mouseY;
     
-    if(mouseX > 640 || mouseX < 0){
-        playerBallX = 320;
-        playerBallY = 240;
-    }else if(mouseY > 480 || mouseY < 0){
-        playerBallY = 240;
-        playerBallX = 320;
+    if(mouseX > 1105 || mouseX < -50){
+        playerBallX = 1080;
+    }else if(mouseY > 665 || mouseY < -50){
+        playerBallY = 640;
     }
     
     background(255, 255, 255);
