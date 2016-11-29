@@ -29,6 +29,12 @@ class ball{
     }
     
     move(){
+        function changeColor(){
+            rVal = Math.random() * (255 - 1) + 1;
+            gVal = Math.random() * (255 - 1) + 1;
+            bVal = Math.random() * (255 - 1) + 1;
+        }
+        
         
         //Makes the balls move
         this.xPos += this.ballXSpeed;
@@ -44,27 +50,19 @@ class ball{
         //Makes the balls bounce off edges
         if (this.yPos >= height){
             this.ballYSpeed = (Math.random() * (maxSpeed - minSpeed) + minSpeed) * -1;
-            rVal = Math.random() * (255 - 1) + 1;
-            gVal = Math.random() * (255 - 1) + 1;
-            bVal = Math.random() * (255 - 1) + 1;
+            changeColor();
         }
         if (this.yPos <= 0){
             this.ballYSpeed = (Math.random() * (maxSpeed - minSpeed) + minSpeed);
-            rVal = Math.random() * (255 - 1) + 1;
-            gVal = Math.random() * (255 - 1) + 1;
-            bVal = Math.random() * (255 - 1) + 1;
+            changeColor();
         }
         if (this.xPos >= width){
             this.ballXSpeed = (Math.random() * (maxSpeed - minSpeed) + minSpeed) * -1;
-            rVal = Math.random() * (255 - 1) + 1;
-            gVal = Math.random() * (255 - 1) + 1;
-            bVal = Math.random() * (255 - 1) + 1;
+            changeColor();
         }
         if (this.xPos <= 0){
             this.ballXSpeed = (Math.random() * (maxSpeed - minSpeed) + minSpeed);
-            rVal = Math.random() * (255 - 1) + 1;
-            gVal = Math.random() * (255 - 1) + 1;
-            bVal = Math.random() * (255 - 1) + 1;
+            changeColor();
         }
         
         //If ball collides with player, stop game
