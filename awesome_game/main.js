@@ -8,6 +8,8 @@ var minSpeed = 1;
 restart = true;
 var timer = 0;
 var timerLap = 200;
+var playerBallX;
+var playerBallY;
 
 class ball{
     
@@ -66,7 +68,7 @@ class ball{
         }
         
         //If ball collides with player, stop game
-        if (this.xPos - 25 <= mouseX + 25 && this.xPos + 25 >= mouseX - 25 && this.yPos - 25 <= mouseY + 25 && this.yPos + 25 >= mouseY - 25){
+        if (this.xPos - 25 <= playerBallX + 25 && this.xPos + 25 >= playerBallX - 25 && this.yPos - 25 <= playerBallY + 25 && this.yPos + 25 >= playerBallY - 25){
             fill(0, 0, 0);
             text("Game Over", 50, 50);
             text("Score: " + timer, 50, 70);
@@ -85,9 +87,20 @@ function setup(){
 
 function draw(){
     timer += 1;
+    playerBallX = mouseX;
+    playerBallY = mouseY;
+    
+    if(mouseX > 640 || mouseX < 0){
+        playerBallX = 320;
+        playerBallY = 240;
+    }else if(mouseY > 480 || mouseY < 0){
+        playerBallY = 240;
+        playerBallX = 320;
+    }
+    
     background(255, 255, 255);
     fill(255, 0 ,0);
-    ellipse(mouseX, mouseY, 50, 50);
+    ellipse(playerBallX, playerBallY, 50, 50);
     fill(rVal, gVal, bVal);
     ellipse(ball1.xPos, ball1.yPos, 50, 50);
     ellipse(ball2.xPos, ball2.yPos, 50, 50);
