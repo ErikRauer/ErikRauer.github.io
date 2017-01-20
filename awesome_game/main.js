@@ -102,20 +102,20 @@ class hsHolder{
         this.scoredata = firebase.database().ref(this.pos + "/score/");
     }
     
-    determine(){
-        //  function setValues(name, amount){
-        //      this.holder = name;
-        //      this.score = amount;
-        //  }
+    // determine(){
+    //     //  function setValues(name, amount){
+    //     //      this.holder = name;
+    //     //      this.score = amount;
+    //     //  }
         
-        this.holderdata.on('value', function(snapshot) {
-             this.holder = snapshot.val();
-        });
+    //     this.holderdata.on('value', function(snapshot) {
+    //          this.holder = snapshot.val();
+    //     });
         
-        // this.holderdata.on('value', function(snapshot) {
-        //      this.holder = snapshot.val();
-        // });
-    }
+    //     // this.holderdata.on('value', function(snapshot) {
+    //     //      this.holder = snapshot.val();
+    //     // });
+    // }
 }
 
 function setup(){
