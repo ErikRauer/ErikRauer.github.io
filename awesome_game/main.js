@@ -225,7 +225,21 @@ function submitStuff(){
     
     for (var i = 1; i < 6; i++){
         if (score > scores[i]){
+            var counter = i;
+            for (var j = i + 1; j < 6; j++){
+                firebase.database().ref('highscore' + j).set({
+                    holder: holders[counter],
+                    score: scores[counter]
+                });
+                counter += 1;
+            }
             writeData(i, hSHolder);
+            // for (var j = i + 1; j < 6; j++){
+            //     firebase.database().ref('highscore' + j).set({
+            //         holder: holders[i],
+            //         score: scores[i]
+            //     });
+            // }
             break;
         }
     }
