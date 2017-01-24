@@ -91,6 +91,11 @@ class ball{
             scoreSave = true;
         }
     }
+    
+    setPos(x, y){
+        this.xPos = x;
+        this.yPos = y;
+    }
 }
 
 class hsHolder{
@@ -123,6 +128,7 @@ function setup(){
     createCanvas(1080, 640);
     ball1 = new ball(100, 100);
     ball2 = new ball(400, 300);
+    ball3 = new ball(-100, -100);
     ball1.initialize();
     ball2.initialize();
     
@@ -190,8 +196,15 @@ function draw(){
         ball1.yPos = 0;
         ball2.xPos = 0;
         ball2.yPos = 0;
+        ball3.xPos = 0;
+        ball3.yPos = 0;
         playerBallX = 200;
         playerBallY = 200;
+    }
+    
+    if (timer == 1000){
+        ball3.setPos(0, 0);
+        ball3.initialize();
     }
     
     fill(255, 0 ,0);
@@ -199,9 +212,11 @@ function draw(){
     fill(rVal, gVal, bVal);
     ellipse(ball1.xPos, ball1.yPos, 50, 50);
     ellipse(ball2.xPos, ball2.yPos, 50, 50);
+    ellipse(ball3.xPos, ball3.yPos, 50, 50);
     
     ball1.move();
     ball2.move();
+    ball3.move();
     
     // fill(rVal, gVal, bVal);
     // ellipse(ball1XPos, ball1YPos, 50, 50);
@@ -227,13 +242,13 @@ function submitStuff(){
     
     for (var i = 1; i < 6; i++){
         if (score > scores[i]){
-            var counter = i;
-            for (var j = i + 1; j < 6; j++){
+            var counter = 4;
+            for (var j = 5; j > i; j--){
                 firebase.database().ref('highscore' + j).set({
                     holder: holders[counter],
                     score: scores[counter]
                 });
-                counter += 1;
+                counter -= 1;
             }
             writeData(i, hSHolder);
             // for (var j = i + 1; j < 6; j++){
