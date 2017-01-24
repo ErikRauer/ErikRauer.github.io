@@ -137,6 +137,7 @@ function setup(){
 }
 
 function draw(){
+    
     //Start timer
     timer += 1;
     
@@ -147,7 +148,8 @@ function draw(){
     //Prevent mouse from exiting Canvas
     if (mouseX > 1105 || mouseX < -50){
         playerBallX = 1080;
-    }else if (mouseY > 665 || mouseY < -50){
+    }
+    if (mouseY > 665 || mouseY < -50){
         playerBallY = 640;
     }
     
