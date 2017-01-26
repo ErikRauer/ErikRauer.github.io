@@ -2,8 +2,7 @@ var config = {
     apiKey: "AIzaSyBbGkIRufjkTy4JxkkfN50cv_JotaBbjao",
     authDomain: "game-highscore-board.firebaseapp.com",
     databaseURL: "https://game-highscore-board.firebaseio.com",
-    storageBucket: "game-highscore-board.appspot.com",
-    messagingSenderId: "393465910184"
+    storageBucket: "game-highscore-board.appspot.com"
 };
 firebase.initializeApp(config);
 var highscoreData = firebase.database().ref();
@@ -169,27 +168,29 @@ function draw(){
         }
         
         //Write Text
+        textSize(100);
         fill(0, 0, 0);
-        text("Game Over", 50, 50);
-        text("Score: " + score, 50, 70);
-        text("What's your name?", 50, 90);
+        text("Game Over", 50, 100);
+        text("Score: " + score, 50, 200);
+        textSize(20);
+        text("What's your name?", 50, 240);
         
-        hSInput.position(50, 110);
+        hSInput.position(50, 260);
         
         //Submit button
         submitButton = createButton('Submit');
-        submitButton.position(181, 110)
+        submitButton.position(181, 260)
         submitButton.mousePressed(submitStuff);
         
         getData();
         
         //Display Highscores
-        text("Highscores:", 50, 150);
-        text("1. " + holders[1] + ": " + scores[1], 50, 170);
-        text("2. " + holders[2] + ": " + scores[2], 50, 190);
-        text("3. " + holders[3] + ": " + scores[3], 50, 210);
-        text("4. " + holders[4] + ": " + scores[4], 50, 230);
-        text("5. " + holders[5] + ": " + scores[5], 50, 250);
+        text("Highscores:", 50, 300);
+        text("1. " + holders[1] + ": " + scores[1], 50, 325);
+        text("2. " + holders[2] + ": " + scores[2], 50, 350);
+        text("3. " + holders[3] + ": " + scores[3], 50, 375);
+        text("4. " + holders[4] + ": " + scores[4], 50, 400);
+        text("5. " + holders[5] + ": " + scores[5], 50, 425);
         
         //Set balls to edge
         ball1.xPos = 0;
@@ -198,12 +199,12 @@ function draw(){
         ball2.yPos = 0;
         ball3.xPos = 0;
         ball3.yPos = 0;
-        playerBallX = 200;
-        playerBallY = 200;
+        playerBallX = 0;
+        playerBallY = 640;
     }
     
     if (timer == 1000){
-        ball3.setPos(0, 0);
+        ball3.setPos(1000, 600);
         ball3.initialize();
     }
     
