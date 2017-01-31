@@ -1,5 +1,4 @@
 var config = {
-    apiKey: "AIzaSyBbGkIRufjkTy4JxkkfN50cv_JotaBbjao",
     authDomain: "game-highscore-board.firebaseapp.com",
     databaseURL: "https://game-highscore-board.firebaseio.com",
     storageBucket: "game-highscore-board.appspot.com"
