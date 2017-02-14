@@ -25,7 +25,7 @@ var hSInput, submitButton;
 var hSHolder1, hSHolder2, hSHolder3, hSHolder4, hSHolder5;
 var holders = [];
 var scores = [];
-var score;
+// var score;
 
 class ball{
     
@@ -122,6 +122,7 @@ class hsHolder{
 }
 
 function setup(){
+    
     //Setup Canvas and balls
     createCanvas(1080, 640);
     ball1 = new ball(100, 100);
@@ -142,7 +143,11 @@ function setup(){
 
 function draw(){
     
-    //Start timer
+    // var plusScore = (function () {
+    //     var score = 0;
+    //     return function () {return score += 1;}
+    // })();
+    
     timer += 1;
     
     //Make player follow mouse
@@ -160,10 +165,79 @@ function draw(){
     background(255, 255, 255);
     
     if (gameOver == true){
+        
         //Save score
-        if (scoreSave == true){
-            score = timer;
-            scoreSave = false;
+        // if (scoreSave == true){
+        //     var score = timer;
+        //     scoreSave = false;
+        // }
+        
+        var score = timer;
+        
+        function submitStuff(){
+            var hSHolder = hSInput.value();
+            
+            for (var i = 0; i < 5; i++){
+                if (score > scores[i]){
+                var counter = 3;
+                    for (var j = 4; j > i; j--){
+                        firebase.database().ref('highscore' + j).set({
+                            holder: holders[counter],
+                            score: scores[counter]
+                        });
+                        counter -= 1;
+                    }
+                    writeData(i, hSHolder);
+                    break;
+                }
+            }
+        
+            location.reload();
+        }
+        
+        // function getData() {
+            // //Gets highscore data from Firebase
+            // hSHolder1.holderdata.on('value', function(snapshot) {
+            //     holders[1] = snapshot.val();
+            // });
+            // hSHolder1.scoredata.on('value', function(snapshot) {
+            //     scores[1] = snapshot.val();
+            // });
+            
+            // hSHolder2.holderdata.on('value', function(snapshot) {
+            //     holders[2] = snapshot.val();
+            // });
+            // hSHolder2.scoredata.on('value', function(snapshot) {
+            //     scores[2] = snapshot.val();
+            // });
+            
+            // hSHolder3.holderdata.on('value', function(snapshot) {
+            //     holders[3] = snapshot.val();
+            // });
+            // hSHolder3.scoredata.on('value', function(snapshot) {
+            //     scores[3] = snapshot.val();
+            // });
+    
+            // hSHolder4.holderdata.on('value', function(snapshot) {
+            //     holders[4] = snapshot.val();
+            // });
+            // hSHolder4.scoredata.on('value', function(snapshot) {
+            //     scores[4] = snapshot.val();
+            // });
+            
+            // hSHolder5.holderdata.on('value', function(snapshot) {
+            //     holders[5] = snapshot.val();
+            // });
+            // hSHolder5.scoredata.on('value', function(snapshot) {
+            //     scores[5] = snapshot.val();
+            // });
+        // }
+        
+        function writeData(pos, newholder) {
+            firebase.database().ref('highscore' + pos).set({
+                holder: newholder,
+                score: score
+            });
         }
         
         //Write Text
@@ -181,15 +255,15 @@ function draw(){
         submitButton.position(181, 260)
         submitButton.mousePressed(submitStuff);
         
-        getData();
+        // getData();
         
         //Display Highscores
         text("Highscores:", 50, 300);
-        text("1. " + holders[1] + ": " + scores[1], 50, 325);
-        text("2. " + holders[2] + ": " + scores[2], 50, 350);
-        text("3. " + holders[3] + ": " + scores[3], 50, 375);
-        text("4. " + holders[4] + ": " + scores[4], 50, 400);
-        text("5. " + holders[5] + ": " + scores[5], 50, 425);
+        text("1. " + holders[0] + ": " + scores[0], 50, 325);
+        text("2. " + holders[1] + ": " + scores[1], 50, 350);
+        text("3. " + holders[2] + ": " + scores[2], 50, 375);
+        text("4. " + holders[3] + ": " + scores[3], 50, 400);
+        text("5. " + holders[4] + ": " + scores[4], 50, 425);
         
         //Set balls to edge
         ball1.xPos = 0;
@@ -200,6 +274,8 @@ function draw(){
         ball3.yPos = 0;
         playerBallX = 0;
         playerBallY = 640;
+        
+        noLoop();
     }
     
     if (timer == 1000){
@@ -217,6 +293,8 @@ function draw(){
     ball1.move();
     ball2.move();
     ball3.move();
+    
+    // plusScore();
     
     // fill(rVal, gVal, bVal);
     // ellipse(ball1XPos, ball1YPos, 50, 50);
@@ -237,32 +315,32 @@ function draw(){
     // }
 }
 
-function submitStuff(){
-    var hSHolder = hSInput.value();
+// function submitStuff(){
+//     var hSHolder = hSInput.value();
     
-    for (var i = 1; i < 6; i++){
-        if (score > scores[i]){
-            var counter = 4;
-            for (var j = 5; j > i; j--){
-                firebase.database().ref('highscore' + j).set({
-                    holder: holders[counter],
-                    score: scores[counter]
-                });
-                counter -= 1;
-            }
-            writeData(i, hSHolder);
-            // for (var j = i + 1; j < 6; j++){
-            //     firebase.database().ref('highscore' + j).set({
-            //         holder: holders[i],
-            //         score: scores[i]
-            //     });
-            // }
-            break;
-        }
-    }
+//     for (var i = 1; i < 6; i++){
+//         if (score > scores[i]){
+//             var counter = 4;
+//             for (var j = 5; j > i; j--){
+//                 firebase.database().ref('highscore' + j).set({
+//                     holder: holders[counter],
+//                     score: scores[counter]
+//                 });
+//                 counter -= 1;
+//             }
+//             writeData(i, hSHolder);
+//             // for (var j = i + 1; j < 6; j++){
+//             //     firebase.database().ref('highscore' + j).set({
+//             //         holder: holders[i],
+//             //         score: scores[i]
+//             //     });
+//             // }
+//             break;
+//         }
+//     }
     
-    location.reload();
-}
+//     location.reload();
+// }
 
 function getData(){
     //Gets highscore data from Firebase
@@ -304,9 +382,9 @@ function getData(){
     
 }
 
-function writeData(pos, newholder) {
-    firebase.database().ref('highscore' + pos).set({
-        holder: newholder,
-        score: score
-    });
-}
+// function writeData(pos, newholder) {
+//     firebase.database().ref('highscore' + pos).set({
+//         holder: newholder,
+//         score: score
+//     });
+// }
