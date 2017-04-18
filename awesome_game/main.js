@@ -345,41 +345,39 @@ function draw(){
 function getData(){
     //Gets highscore data from Firebase
     hSHolder1.holderdata.on('value', function(snapshot) {
-             holders[1] = snapshot.val();
+             holders[0] = snapshot.val();
     });
     hSHolder1.scoredata.on('value', function(snapshot) {
-             scores[1] = snapshot.val();
+             scores[0] = snapshot.val();
     });
     
     hSHolder2.holderdata.on('value', function(snapshot) {
-             holders[2] = snapshot.val();
+             holders[1] = snapshot.val();
     });
     hSHolder2.scoredata.on('value', function(snapshot) {
-             scores[2] = snapshot.val();
+             scores[1] = snapshot.val();
     });
     
     hSHolder3.holderdata.on('value', function(snapshot) {
-             holders[3] = snapshot.val();
+             holders[2] = snapshot.val();
     });
     hSHolder3.scoredata.on('value', function(snapshot) {
-             scores[3] = snapshot.val();
+             scores[2] = snapshot.val();
     });
     
     hSHolder4.holderdata.on('value', function(snapshot) {
-             holders[4] = snapshot.val();
+             holders[3] = snapshot.val();
     });
     hSHolder4.scoredata.on('value', function(snapshot) {
-             scores[4] = snapshot.val();
+             scores[3] = snapshot.val();
     });
     
     hSHolder5.holderdata.on('value', function(snapshot) {
-             holders[5] = snapshot.val();
+             holders[4] = snapshot.val();
     });
     hSHolder5.scoredata.on('value', function(snapshot) {
-             scores[5] = snapshot.val();
+             scores[4] = snapshot.val();
     });
-    
-    
 }
 
 // function writeData(pos, newholder) {
