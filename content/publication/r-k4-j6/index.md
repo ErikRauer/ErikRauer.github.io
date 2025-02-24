@@ -1,7 +1,7 @@
 ---
 title: "R(K_6-e,K4) = 30"
 authors:
-- Davdid James
+- David James
 - Elisha Kahan
 - admin
 author_notes:

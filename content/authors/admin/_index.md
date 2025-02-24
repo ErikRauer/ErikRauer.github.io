@@ -52,7 +52,7 @@ interests:
   - Graph Theory
 
 education:
-  - area: (Current) PhD in Computer Science
+  - area: (2nd Year) PhD in Computer Science
     institution: Iowa State University
     date_start: 2023-08-01
     # date_end: Present
@@ -61,7 +61,7 @@ education:
     # button:
     #   text: 'Read Thesis'
     #   url: 'https://example.com'
-  - area: BA Mathematics & Computer Science 
+  - area: BA in Mathematics & Computer Science 
     institution: University of Minnesota, Morris
     date_start: 2019-08-01
     date_end: 2023-05-01
@@ -183,6 +183,6 @@ education:
 
 ## About Me
 
-Erik Rauer is a Computer Science PhD student at Iowa State University as a member of the [Formal Methods Group](https://faculty.sites.iastate.edu/sbasu/formal-methods-group).
+Erik Rauer is a second year Computer Science PhD student at Iowa State University working with [Samik Basu](https://faculty.sites.iastate.edu/sbasu/) in the [Formal Methods Group](https://faculty.sites.iastate.edu/sbasu/formal-methods-group).
 His current work is on the consistency of qualitative preference reasoning.
-In the past, Erik has also done work in the areas of Ramsey Theory, Matroid Theory, and Genetic Programming. 
+As an undergraduate, Erik has also done research work in the areas of Ramsey Theory, Matroid Theory, and Genetic Programming. 
