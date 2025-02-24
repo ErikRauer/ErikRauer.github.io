@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Qualitative Preference Reasoning | Hugo Academic CV Theme</title>
+    <title>Qualitative Preference Reasoning | Erik Rauer</title>
     <link>http://localhost:1313/tags/qualitative-preference-reasoning/</link>
       <atom:link href="http://localhost:1313/tags/qualitative-preference-reasoning/index.xml" rel="self" type="application/rss+xml" />
     <description>Qualitative Preference Reasoning</description>
-    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sat, 01 Feb 2025 00:00:00 +0000</lastBuildDate>
     <image>
       <url>http://localhost:1313/media/icon_hu_645fa481986063ef.png</url>
       <title>Qualitative Preference Reasoning</title>
@@ -15,7 +15,7 @@
     <item>
       <title>Checking Consistency of CP-Theory Preferences in Polynomial Time</title>
       <link>http://localhost:1313/publication/cc-acyclicity/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/publication/cc-acyclicity/</guid>
       <description>&lt;div class=&#34;flex px-4 py-3 mb-6 rounded-md bg-primary-100 dark:bg-primary-900&#34;&gt;
 &lt;span class=&#34;pr-3 pt-1 text-primary-600 dark:text-primary-300&#34;&gt;
